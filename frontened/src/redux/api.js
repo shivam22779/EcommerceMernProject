@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const devEnv = process.env.NODE_ENV !== "PRODUCTION";
+const {REACT_APP_DEV_API, REACT_APP_PROD_API} = process.env;
 export const API = axios.create({
     withCredentials: true,
-    baseURL: "http://localhost:4000",
+    baseURL: `${devEnv ? REACT_APP_DEV_API : REACT_APP_PROD_API}`
     // credentials: 'include'
 });
 

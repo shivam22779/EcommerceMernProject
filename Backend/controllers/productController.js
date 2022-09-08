@@ -32,7 +32,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 
 // Get all products
 exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
-  const resultPerPage = 3;
+  const resultPerPage = 6;
   // const productCount = await Product.count();
   // const totalPage = Math.ceil(productCount / Number(resultPerPage));
 
