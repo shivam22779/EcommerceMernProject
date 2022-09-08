@@ -1,0 +1,34 @@
+.pageContainer {
+  height: 100vh;
+  background-image: linear-gradient(125deg, #6a89cc, #b8e994);
+}
+
+.pageContainer > div {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  color: #343434;
+}
+
+.pageContainer > div > h1 {
+  font-size: 9vmax;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 20px;
+}
+
+.pageContainer > div > a {
+  background: #e55039aa;
+  color: #fff;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 1.5vmax;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.pageContainer > div > a:hover {
+  background-color: #e55039;
+}

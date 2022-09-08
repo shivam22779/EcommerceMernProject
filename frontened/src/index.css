@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+  /* outline: 0; */
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Chrome, Safari, Edge, Opera to avoid arrow in buttons*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+
+
+
+.redColor{
+  color: red !important;
+}
+.greenColor{
+  color: green !important;
+}

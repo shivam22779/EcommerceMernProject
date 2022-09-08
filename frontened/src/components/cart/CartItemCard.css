@@ -1,0 +1,30 @@
+.cartItemCard{
+    display: flex;
+    padding: 1vmax;
+    height: 10vmax;
+    align-items: flex-start;
+}
+
+.cartItemCard > img{
+    width: 7vmax;
+    height: 100%;
+    border-radius: 0.2rem;
+}
+
+.cartItemCard > div{
+    display: flex;
+    margin: 0.3vmax 3vmax;
+    flex-direction: column;
+}
+
+.cartItemCard > div > p{
+    color: red;
+    background-color: rgb(135, 136, 184);
+    border: 2px solid azure;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    width: max-content;
+    padding: 0.1rem 0.4rem;
+}
+    

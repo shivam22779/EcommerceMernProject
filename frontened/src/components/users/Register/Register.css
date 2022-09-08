@@ -1,0 +1,11 @@
+#registerImage > img{
+    width: 3vw;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+/* #avatarInput::file-selector-button{
+    cursor: pointer;
+    width: 100%;
+    height: 5vmax;
+} */

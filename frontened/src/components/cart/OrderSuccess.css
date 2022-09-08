@@ -1,0 +1,32 @@
+.orderSuccess{
+    margin: auto;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    padding: 10vmax;
+}
+
+.orderSuccess > svg{
+    font-size: 7vmax;
+    color: tomato;
+}
+
+.orderSuccess > p{
+    font-size: 2vmax;
+}
+
+.orderSuccess > a {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    margin: 2vmax;
+    cursor: pointer;
+    padding: 1vmax 3vmax;
+    font: 400 1.5vmax "Roboto";
+    
+
+}
+   

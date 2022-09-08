@@ -1,0 +1,104 @@
+.dashboard {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  position: absolute;
+  z-index: 1;
+  overflow-x: auto;
+}
+
+.dashboardContainer {
+  border-left: 1px solid rgba(56, 50, 50, 0.092);
+  background-color: white;
+  padding: 3rem 0;
+}
+
+.dashboardContainer > h1 {
+  color: black;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  padding: 1.5rem;
+  font: 300 2rem "Roboto";
+}
+
+.dashboardSummary {
+  margin: 2rem 0;
+}
+
+.dashboardSummary > div {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.dashboardSummary > div > p {
+  background-color: rgb(63, 62, 136);
+  color: white;
+  width: 100%;
+  margin: 0.2rem;
+  padding: 1.5rem;
+  text-align: center;
+  font: 300 1.3rem "Roboto";
+}
+
+.dashboardSummaryBox2 > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: rgba(214, 128, 128, 0.792);
+  font: 300 2.2vmax "Roboto";
+  color: rgb(21, 12, 39);
+  border-radius: 100%;
+  margin: 2rem;
+  width: 12vmax;
+  height: 12vmax;
+}
+
+.dashboardSummaryBox2 > a:first-child {
+  background-color: tomato;
+  color: white;
+}
+
+.dashboardSummaryBox2 > a:last-child {
+  background-color: rgb(56, 25, 181);
+  color: white;
+}
+
+.lineChart {
+  width: 80%;
+  margin: auto;
+}
+
+.doughtnutChart {
+  width: 30%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard{
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardContainer {
+    border-left: none;
+  }
+
+  .dashboardSummary > div > p{
+    margin: 0;
+  }
+
+
+  .dashboardSummaryBox2 > a {
+    padding: 2rem;
+    margin: 1rem;
+    font: 300 2.2vmax "Roboto";
+    width: 16vmax;
+    height: 16vmax;
+  }
+
+
+}

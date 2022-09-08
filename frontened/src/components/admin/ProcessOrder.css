@@ -1,0 +1,131 @@
+.processOrderInfo {
+  background-color: white;
+  border-left: 1px solid rgb(234, 228, 228);
+  width: 100%;
+}
+
+/* .processOrderContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+} */
+
+.confirmOrderProcess {
+  background-color: white;
+  min-height: 80vh;
+}
+
+.newProductContainer1 {
+  border-top: 1px solid rgb(168, 164, 164) !important;
+  margin-top: 4vmax;
+  width: 100%;
+}
+
+.confirmOrderProcess > div:first-child {
+  border-right: 1px solid rgb(234, 228, 228);
+}
+
+.confirmOrderProcess > div:first-child > p:first-child {
+  text-align: center;
+  margin-top: 4vmax;
+  font-size: 1.7vmax;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+
+.selectProcessOrderTag {
+  width: 50%;
+  padding: 8px 6px;
+  border: 1px solid rgb(189, 184, 184);
+  border-radius: 5px;
+}
+
+.processOrderBtn {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .confirmCartItemsContainer > div {
+    font: 400 4vw "Roboto";
+    margin: 4vw 0;
+  }
+  .confirmCartItemsContainer > div > img {
+    width: 10vw;
+  }
+  .confirmCartItemsContainer > div > a {
+    width: 30%;
+    margin: 0 2vw;
+    font: 400 3vw "Roboto";
+  }
+
+  .confirmCartItemsContainer > div > span {
+    font: 400 3vw "Roboto";
+  }
+
+  .selectProcessOrderTag {
+    width: 100%;
+  }
+
+  .processOrderBtn {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .orderDetailsContainerBox > div > p {
+    font: 400 3vw "Roboto";
+  }
+
+  .orderDetailsContainerBox > div > span {
+    font: 100 3vw "Roboto";
+  }
+  .confirmShippingArea > p {
+    font: 400 4vw "Roboto";
+  }
+
+  .confirmCartItems > p {
+    font: 400 4vw "Roboto";
+  }
+
+  /* Need to work on it */
+  .confirmCartItemsContainer {
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+  }
+
+  .confirmCartItemsContainer > div {
+    margin: 3vw 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: none;
+  }
+
+  .confirmCartItemsContainer > div > img {
+    width: 20vw;
+  }
+  .confirmCartItemsContainer > div > a {
+    width: 100%;
+    margin: 1vw 0;
+    font: 300 3vw "Roboto";
+  }
+
+  .confirmCartItemsContainer > div > span {
+    font: 400 3vw "Roboto";
+  }
+
+  .newProductContainer1 h5 {
+    font: 400 4vw "Roboto";
+  }
+
+  .processOrderBtn {
+    font-size: 3vw;
+  }
+
+  .selectProcessOrderTag {
+    font-size: 3vw;
+  }
+}

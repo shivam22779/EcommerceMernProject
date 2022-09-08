@@ -1,0 +1,40 @@
+
+.productListContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-left: 1px solid rgba(43, 39, 39, 0.057);
+    height: 100vh;
+    width: 100%;
+   
+    
+}
+
+.productListHeading{
+    font: 400 2rem "Roboto";
+    padding: 0.5vmax;
+    color: black;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.ProductListTable{
+    background-color: white;
+    color: rgb(31, 28, 28);
+}
+
+.ProductListTable a, .ProductListTable button{
+    color: rgb(23, 22, 22);
+    transition: all 0.5s;
+}
+
+.ProductListTable a:hover, .ProductListTable button:hover{
+    color: tomato;
+}
+   
+
+
+
+    

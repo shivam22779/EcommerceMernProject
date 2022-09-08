@@ -1,0 +1,24 @@
+.speedDial{
+    position: fixed;
+    right: 1rem;
+    top: 5rem;
+    z-index: 10;
+}
+ 
+.MuiButtonBase-root{
+    border-radius: 100% !important;
+    
+}
+    
+   
+
+.speedDialIcon {
+    width: 3.5rem;
+    /* height: 3rem; */
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+    
+    
+    
+    

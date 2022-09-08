@@ -1,0 +1,334 @@
+.productDetailsContainer {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.productDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6vmax;
+  background-color: white;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.productDetails > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2vmax;
+}
+
+.productDetails > div:last-child {
+  align-items: flex-start;
+}
+
+.CarouselImage {
+  width: 20vmax;
+  height: 25vmax;
+}
+
+.details_block1 > h2 {
+  color: rgb(41, 39, 39);
+  font-weight: 300;
+  font-size: 1.6vmax;
+}
+
+.details_block1 > p {
+  color: rgb(60, 55, 55);
+  font: 200 1vmax cursive;
+}
+
+.details_block2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid rgb(52, 49, 49);
+  border-bottom: 1px solid rgb(52, 49, 49);
+  width: 60%;
+  padding: 1vmax 0;
+}
+
+.details_block2 > span {
+  color: rgb(41, 39, 39);
+  font: 200 1vmax cursive;
+}
+
+.details_block3 {
+  width: 60%;
+}
+
+.details_block3 > h1 {
+  color: rgb(53, 50, 50);
+  margin: 1vmax 0;
+  font: 400 1.8vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.details_block3_1 {
+  display: flex;
+  align-items: center;
+}
+
+.details_block3_1_1 > button {
+  border: none;
+  background-color: rgb(79, 78, 78);
+  padding: 0.5vmax;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+}
+
+.details_block3_1_1 > button:hover {
+  background-color: rgb(21, 21, 21);
+}
+
+.details_block3_1_1 > input {
+  border: none;
+  padding: 0.5vmax 0.3vmax;
+  width: 3vmax;
+  text-align: center;
+  outline: none;
+  color: black;
+  font: 400 1vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.details_block3_1 > button:last-child {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: tomato;
+  font-weight: 400;
+  font-size: 1vmax;
+  border-radius: 1.2rem;
+  padding: 0.5vmax 1.4vmax;
+  margin: 1vamx;
+  margin-left: 2vmax;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.details_block3_1 > button:last-child:hover {
+  background-color: rgb(252, 46, 10);
+}
+
+.details_block3 > p {
+  border-top: 1px solid rgb(52, 49, 49);
+  border-bottom: 1px solid rgb(52, 49, 49);
+  padding: 1vmax;
+  padding-left: 0;
+  color: rgb(41, 39, 39);
+  font-weight: 400;
+  font-size: 1vmax;
+  margin: 1vmax 0;
+}
+
+.details_block4 {
+  color: rgb(33, 32, 32);
+  font: 500 1.3vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.details_block4 > p {
+  color: rgb(39, 38, 38);
+  font: 300 1vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.submitReview {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(44, 44, 83);
+  font-weight: 400;
+  font-size: 1vmax;
+  border-radius: 1.2rem;
+  padding: 0.5vmax 2vmax;
+  margin: 1vamx;
+  margin-left: 0;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.submitReview:hover {
+  background-color: rgb(19, 19, 31);
+  transform: scale(1.1);
+}
+
+/* Review card styling */
+
+.reviewHeading {
+  color: rgb(23, 22, 22);
+  font-weight: 500;
+  font-size: 1.5vmax;
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: 1vmax;
+  width: 20vmax;
+  margin: auto;
+  margin-bottom: 4vmax;
+}
+
+.reviews {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  overflow: auto;
+}
+
+.reviewCard {
+  flex: none;
+  box-shadow: 0 0 5px rgb(38, 37, 37);
+  border: 1px solid rgb(18, 17, 17);
+  width: 30vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1vmax;
+  padding: 3vmax;
+  margin: 0 auto;
+}
+
+
+
+
+.reviewCard > img {
+  width: 5vmax;
+}
+
+.reviewCard > p {
+  color: rgb(32, 30, 30);
+  font-weight: 600;
+  font-size: 1.5vmax;
+}
+
+.reviewCard > span {
+  color: rgb(94, 89, 89);
+  font-weight: 300 0.8vmax cursive;
+  align-items: center;
+}
+
+.noReviews {
+  font: 400 1.6vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2vmax;
+}
+
+/* Related Products */
+.relatedproductsContainer {
+  width: 80%;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.relatedproductsContainer > h4 {
+  width: max-content;
+  margin: auto;
+  border-bottom: 1px solid black;
+  padding: 0.7rem 0.6rem;
+}
+  
+.relatedproducts {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  width: 50%;
+  margin: 3rem auto;
+  overflow: auto;
+}
+
+.relatedItem {
+  margin: 0 auto;
+  /* width: max-content; */
+  
+}
+
+/* Media query */
+
+@media only screen and (max-width: 600px) {
+  .productDetails {
+    flex-direction: column;
+    height: unset;
+  }
+
+  .productDetails > div:last-child {
+    align-items: center;
+  }
+
+  .details_block1 > h2 {
+    text-align: center;
+    font-size: 2vmax;
+  }
+
+  .details_block1 > p {
+    font: 200 1.4vmax cursive;
+    text-align: center;
+  }
+
+  .details_block2 {
+    justify-content: center;
+  }
+
+  .details_block2 > span {
+    font: 200 1.6vmax cursive;
+  }
+
+  .details_block3 > h1 {
+    font: 500 2vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-align: center;
+  }
+
+  .details_block3_1 {
+    flex-direction: column;
+  }
+
+  .details_block3_1_1 > button {
+    padding: 1.5vmax;
+  }
+
+  .details_block3_1_1 > input {
+    width: 5vmax;
+    font: 400 2vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  .details_block3_1 > button:last-child {
+    margin: 2vmax 0;
+    font-weight: 400;
+    font-size: 2vmax;
+    padding: 0.5vmax 2vmax;
+  }
+
+  .details_block3 > p {
+    font-weight: 300;
+    font-size: 2vmax;
+    text-align: center;
+  }
+
+  .details_block4 {
+    font: 400 2.5vmax "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+  }
+
+  .details_block4 > p {
+    font: 200 1.7vmax "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+  }
+
+  .submitReview {
+    font-weight: 400;
+    font-size: 2vmax;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .relatedItem {
+    margin: 0 0.5rem;
+  }
+
+  .reviewCard{
+    margin: 0 0.5rem;
+  }
+}

@@ -1,0 +1,107 @@
+.banner {
+  background: url("../../images/homeBackground.jpg") no-repeat center
+    center/cover;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.banner > h1 {
+  font-weight: 900;
+  text-align: center;
+  color: black;
+}
+.banner > p {
+  margin-bottom: 4rem;
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.homeHeading {
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: max-content;
+  margin: 2rem auto;
+}
+
+/* Product Style */
+.productCard {
+  display: flex;
+  flex-direction: column;
+  width: 13vmax;
+  margin: auto;
+  color: rgb(29, 25, 25);
+  transition: all 0.5s;
+}
+.productCard:hover {
+  transform: translateY(-1vw);
+}
+
+.productCard > img{
+    aspect-ratio: 1/1.4;
+}
+
+
+.productCard > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5vw 0;
+}
+
+
+    
+
+.productCard > div > span{
+    
+    font-weight: 300;
+    font-size: 2vmax;
+}
+
+.productCard  > p{
+    font-size: 1.4vw;
+    margin: 1vw 0.5vw;
+    margin-bottom: 0vw;
+}
+
+.productCard > span{
+    margin: 0.6vw 0.6vw;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(227, 26, 26);
+    font-weight: 300;
+    font-size: 2vmax;
+}
+  
+@media only screen and (max-width: 600px) {
+
+  .productCard {
+    width: 18vmax;
+  }
+
+  .productCard  > p{
+    font-size: 2vmax;
+    /* margin: 1vw 0.5vw;
+    margin-bottom: 0vw; */
+}
+
+.productCard > div > span{
+  font-size: 3vmax;
+}
+
+.productCard > span{
+  font-weight: 500;
+  font-size: 2.5vmax
+}
+  
+
+   
+    
+    
+
+}
+
