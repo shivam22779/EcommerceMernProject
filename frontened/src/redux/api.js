@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const devEnv = process.env.NODE_ENV !== "PRODUCTION";
-const {REACT_APP_DEV_API, REACT_APP_PROD_API} = process.env;
+
 export const API = axios.create({
     withCredentials: true,
-    baseURL: `${devEnv ? REACT_APP_DEV_API : REACT_APP_PROD_API}`
-    // credentials: 'include'
+    // baseURL: `${devEnv ? REACT_APP_DEV_API : REACT_APP_PROD_API}`
+    credentials: 'include'
 });
 
 // export const getProducts = (keyword, currentPage, price)=>API.get(`/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}`);

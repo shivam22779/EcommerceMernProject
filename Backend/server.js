@@ -26,8 +26,10 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-const server = app.listen(process.env.PORT, () => {
-  console.log(`Server started at http://localhost:${process.env.PORT}`);
+const PORT = process.env.PORT || 4000;
+
+const server = app.listen(PORT, () => {
+  console.log(`Server is running at port no ${PORT}`);
 });
 
 //Unhandeled promise rejections like invalid connection string
