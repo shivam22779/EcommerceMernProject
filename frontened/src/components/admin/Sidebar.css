@@ -1,59 +1,56 @@
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 4rem 0;
-    /* border-right: 1px solid black; */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 4rem 0;
 }
 
-.sidebar > a:first-child{
-    padding: 0;
+.sidebar > a:first-child {
+  padding: 0;
 }
-.sidebar > a > img{
-    width: 100%;
-    aspect-ratio: 1/0.2;
-    transition: all 0.5s;
+.sidebar > a > img {
+  width: 100%;
+  aspect-ratio: 1/0.2;
+  transition: all 0.5s;
 }
 
-.sidebar > a > img:hover{
-    filter: drop-shadow(0 0 10px tomato);
+.sidebar > a > img:hover {
+  filter: drop-shadow(0 0 10px tomato);
 }
 
 .sidebar a {
-    transition: all 0.5s;
-    color: rgb(49, 49, 92);
-    padding: 2rem;
-    font: 200 1rem "Roboto";
+  transition: all 0.5s;
+  color: rgb(49, 49, 92);
+  padding: 2rem;
+  font: 200 1rem "Roboto";
 }
 
-.sidebar a:hover{
-    color: tomato;
-    transform: scale(1.1);
+.sidebar a:hover {
+  color: tomato;
+  transform: scale(1.1);
 }
 
-.sidebar > div{
-    
-    color: rgb(49, 49, 92);
-    padding: 2rem;
-    font: 200 1rem "Roboto";
-    transition: all 0.5s;
+.sidebar > div {
+  color: rgb(49, 49, 92);
+  padding: 2rem;
+  font: 200 1rem "Roboto";
+  transition: all 0.5s;
 }
 
-.sidebar > div:hover{
-    
-    color: tomato;
-    transform: scale(1.1);
+.sidebar > div:hover {
+  color: tomato;
+  transform: scale(1.1);
 }
 
-.sidebar a > p{
-    display: flex;
-    align-items: center;
+.sidebar a > p {
+  display: flex;
+  align-items: center;
 }
 
-.sidebar a > p > svg{
-    margin-right: 0.5rem;
+.sidebar a > p > svg {
+  margin-right: 0.5rem;
 }
 
-.MuiTypography-root{
-    background-color: white !important;
+.MuiTypography-root {
+  background-color: white !important;
 }

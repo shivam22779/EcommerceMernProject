@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { resetPassword, clearErrors } from "../../../redux/features/authSlice";
 import "./ResetPassword.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ResetPassword = () => {
     const state = {
@@ -26,6 +26,7 @@ const ResetPassword = () => {
     const alert = useAlert();
     const dispatch = useDispatch();
     const params = useParams();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,7 +35,7 @@ const ResetPassword = () => {
                 passwords,
                 token: params.token
             }
-          dispatch(resetPassword({ data, alert }));
+          dispatch(resetPassword({ data, alert, navigate }));
         }
     };
 

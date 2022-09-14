@@ -4,12 +4,6 @@
   width: 100%;
 }
 
-/* .processOrderContainer {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  width: 100%;
-} */
-
 .confirmOrderProcess {
   background-color: white;
   min-height: 80vh;

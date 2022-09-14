@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import "./ProductReviews.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -47,7 +47,7 @@ const ProductReviews = () => {
       minWidth: 180,
       flex: 0.4,
       cellClassName: (params) => {
-        return params.getValue(params.id, "rating") >= 3
+        return params.row.rating >= 3
           ? "greenColor"
           : "redColor";
       },
@@ -67,7 +67,7 @@ const ProductReviews = () => {
                 onClick={() => {
                   dispatch(
                     deleteProductReview({
-                      reviewId: params.getValue(params.id, "id"),
+                      reviewId: params.row.id,
                       productId,
                       alert,
                     })
@@ -166,6 +166,7 @@ const ProductReviews = () => {
             <DataGrid
               rows={rows}
               columns={columns}
+              rowsPerPageOptions={[5]}
               pageSize={5}
               disableSelectionOnClick
               className="ProductListTable"

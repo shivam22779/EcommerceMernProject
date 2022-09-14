@@ -95,10 +95,11 @@ const ProductDetails = () => {
   }, [error, productDetails]);
 
   const options = {
-    value: productDetails.rating,
+    value: productDetails.rating ? productDetails.rating : 0,
     size: "large",
-    // readOnly: true,
+    readOnly: true,
     precision: 0.5,
+    
   };
 
   return (
@@ -179,9 +180,10 @@ const ProductDetails = () => {
             <DialogTitle>Submit Review</DialogTitle>
             <DialogContent className="submitDialog">
               <Rating
-                onChange={(e) => setRating(e.target.value)}
+                onChange={(e) => setRating(Number(e.target.value))}
                 value={rating}
                 size="large"
+                
               />
               <textarea
                 className="submitDialogTextArea"

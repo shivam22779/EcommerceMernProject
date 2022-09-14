@@ -1,82 +1,75 @@
-.paymentContainer{
-    display: grid;
-    background-color: rgba(255, 255, 255, 0.693);
-    place-items: center;
-    margin: 4vmax auto;
-    height: 65vh;
-    width: 40vw;
-    
+.paymentContainer {
+  display: grid;
+  background-color: rgba(255, 255, 255, 0.693);
+  place-items: center;
+  margin: 4vmax auto;
+  min-height: 65vh;
+  width: 40vw;
 }
 
-.paymentForm{
-    width: 100%;
-    height: 100%;
-    text-align: center;
+.paymentForm {
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
-
-.paymentForm > p{
-    font: 400 2vmax "Roboto";
-    color: black;
-    border-bottom: 1px solid black;
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    padding: 1vmax 0;
+.paymentForm > p {
+  font: 400 2vmax "Roboto";
+  color: black;
+  border-bottom: 1px solid black;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 1vmax 0;
 }
 
-.paymentForm > div{
-    display: flex;
-    align-items: center;
-    margin: 2vmax 0;
+.paymentForm > div {
+  display: flex;
+  align-items: center;
+  margin: 2vmax 0;
 }
 
-.paymentInput{
-    outline: none;
-    padding: 1vmax 4vmax;
-    padding-right: 1vmax;
-    border: 1px solid black;
-    border-radius: 4px;
-    width: 100%;
+.paymentInput {
+  outline: none;
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 100%;
 }
 
-.paymentForm  svg{
-    position: absolute;
-    transform: translateX(1vmax);
-    font-size: 1.6vmax;
-    color: black;
+.paymentForm svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: black;
 }
 
-.paymentFormBtn{
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(78, 78, 244);
-    color: white;
+.paymentFormBtn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(78, 78, 244);
+  color: white;
+  font: 300 1.2vmax "Roboto";
+  width: 100%;
+  padding: 1vmax 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  outline: none;
+}
+
+.paymentFormBtn:hover {
+  background-color: rgb(9, 9, 182);
+}
+
+@media only screen and (max-width: 600px) {
+  .paymentContainer {
+    width: 60vw;
+  }
+
+  .paymentFormBtn {
     font: 300 1.8vmax "Roboto";
-    width: 100%;
-    padding: 1.6vmax 0.8vmax;
-    cursor: pointer;
-    transition: all 0.5s;
-    outline: none;
-}
-    
 
-.paymentFormBtn:hover{
-    background-color: rgb(9, 9, 182);
-}
-
-@media only screen and (max-width: 600px){
-    .paymentContainer{
-        
-        width: 60vw;
-    }
-     
-    .paymentFormBtn{
-        
-        font: 300 1.8vmax "Roboto";
-        
-        padding: 1.8vmax 0.8vmax;
-       
-    }
-
+    padding: 1.8vmax 0.8vmax;
+  }
 }

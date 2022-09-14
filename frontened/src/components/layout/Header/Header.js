@@ -5,11 +5,16 @@ import logo from "../../../images/logo.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginIcon from "@mui/icons-material/Login";
 import "./Header.css";
+import { MDBBadge } from "mdb-react-ui-kit";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
 
   const navigate = useNavigate();
+
+  const { cartItems } = useSelector((state) => ({ ...state.ordersInfo }));
+  const { user } = useSelector((state) => ({ ...state.auth }));
 
   const handleSubmitForSearch = (e) => {
     e.preventDefault();
@@ -40,11 +45,19 @@ const Header = () => {
           </form>
         </div>
         <div className="icons">
+          {user === null && (
+            <Link title="login" to="/login">
+              <LoginIcon />
+            </Link>
+          )}
+
           <Link to="/cart">
-            <ShoppingCartIcon />
-          </Link>
-          <Link to="/login">
-            <LoginIcon />
+            <MDBBadge pill color="danger" className="badgeClass">
+              {cartItems.length}
+            </MDBBadge>
+            <span>
+              <ShoppingCartIcon />
+            </span>
           </Link>
         </div>
       </div>
@@ -57,6 +70,5 @@ const Header = () => {
     </Fragment>
   );
 };
-          
 
 export default Header;

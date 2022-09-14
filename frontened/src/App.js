@@ -53,7 +53,19 @@ function App() {
     setStripeApiKey(data.stripeApiKey);
   };
 
+  var cookieName;
+  const getCookie = () => {
+    let allCookies = document.cookie;
+    let allCookieArray = allCookies.split(";");
+
+    for (let i = 0; i < allCookieArray.length; i++) {
+      cookieName = allCookieArray[i].split("=")[0];
+    }
+  };
+
   useEffect(() => {
+    getCookie();
+    cookieName === "token" && dispatch(loadUser());
     dispatch(loadUser());
     getStripeApiKey();
 

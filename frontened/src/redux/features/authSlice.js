@@ -84,7 +84,7 @@ export const forgotPassword = createAsyncThunk(
       const response = await api.forgotPassword(email);
 
       alert.success("Reset password link sent to your mail");
-     
+
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data.message);
@@ -93,12 +93,13 @@ export const forgotPassword = createAsyncThunk(
 );
 export const resetPassword = createAsyncThunk(
   "auth/resetPassword",
-  async ({ data, alert }, thunkAPI) => {
+  async ({ data, alert, navigate}, thunkAPI) => {
     try {
       const response = await api.resetPassword(data);
 
       alert.success("Password reset successfull");
-     
+      navigate("/account");
+
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data.message);
@@ -107,7 +108,7 @@ export const resetPassword = createAsyncThunk(
 );
 export const getAllUsersByAdmin = createAsyncThunk(
   "admin/allUsers",
-  async (_ , thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
       const response = await api.getAllUsersByAdmin();
       return response.data;
@@ -129,22 +130,22 @@ export const getUserDetailsByAdmin = createAsyncThunk(
 );
 export const updateUserByAdmin = createAsyncThunk(
   "admin/updateUser",
-  async ({id, inputData, alert, navigate}, thunkAPI) => {
+  async ({ id, inputData, alert, navigate }, thunkAPI) => {
     try {
       const response = await api.updateUserByAdmin(id, inputData);
 
       alert.success("User updated successfully");
-      navigate("/admin/users")
+      navigate("/admin/users");
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data.message);
     }
   }
 );
-      
+
 export const deleteUserByAdmin = createAsyncThunk(
   "admin/deleteUser",
-  async ({id, alert}, thunkAPI) => {
+  async ({ id, alert }, thunkAPI) => {
     try {
       const response = await api.deleteUserByAdmin(id);
       alert.success("User deleted successfully");
@@ -154,10 +155,6 @@ export const deleteUserByAdmin = createAsyncThunk(
     }
   }
 );
-  
-
-      
-     
 
 const authSlice = createSlice({
   name: "auth",
@@ -170,7 +167,6 @@ const authSlice = createSlice({
     users: "",
     userDetails: {},
     success: false,
-    
   },
   reducers: {
     setLogout: (state, action) => {
@@ -230,9 +226,9 @@ const authSlice = createSlice({
     },
     [loadUser.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload;
       state.isAuthenticated = false;
     },
+
     [logout.pending]: (state, action) => {
       state.loading = true;
       state.isAuthenticated = true;
@@ -327,17 +323,13 @@ const authSlice = createSlice({
     [deleteUserByAdmin.fulfilled]: (state, action) => {
       state.loading = false;
       state.success = action.payload.success;
-      
     },
     [deleteUserByAdmin.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },
-   
   },
 });
-      
-      
 
 export default authSlice.reducer;
 export const { clearErrors, resetSuccess, clearUserData } = authSlice.actions;

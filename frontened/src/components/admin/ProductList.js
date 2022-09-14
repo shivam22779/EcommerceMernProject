@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import "./ProductList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -14,6 +14,7 @@ import { useAlert } from "react-alert";
 import { Button } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 import Sidebar from "./Sidebar";
+
 
 
 const ProductList = () => {
@@ -48,12 +49,13 @@ const ProductList = () => {
       renderCell: (params) => {
         return (
           <Fragment>
-            <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
+            <Link to={`/admin/product/${params.row.id}`}>
               <Edit />
             </Link>
             <Button>
               <Delete onClick={()=>{
-                dispatch(deleteProductByAdmin({id: params.getValue(params.id, "id"), alert, navigate}));
+                // dispatch(deleteProductByAdmin({id: params.getValue(params.id, "id"), alert, navigate}));--> this was used earlier in older versions to get the value of any field in a particular row
+                dispatch(deleteProductByAdmin({id: params.row.id, alert, navigate}));
               }}/>
             </Button>
           </Fragment>
@@ -96,10 +98,12 @@ const ProductList = () => {
             <DataGrid
             rows={rows}
             columns={columns}
+            rowsPerPageOptions={[5]}
             pageSize={5}
             disableSelectionOnClick
             className="ProductListTable"
             autoHeight
+            
             pagination
             />
         </div>

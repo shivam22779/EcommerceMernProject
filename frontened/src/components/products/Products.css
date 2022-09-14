@@ -1,9 +1,11 @@
+
+
 .filterContainer {
   display: flex;
   flex-direction: column;
   height: 35vmax;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: left;
   margin: 6rem 0;
   padding: 2vmax;
@@ -35,7 +37,6 @@
   color: rgb(7, 91, 140);
   font-weight: 900;
   font-size: 20px;
-  
 }
 
 .categoryTest {
@@ -58,49 +59,7 @@
 .productContainer {
   min-height: 70vh;
   margin: auto;
-  /* border-left: 1px solid black; */
-}
-
-.paginationBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page-item {
-  border: 1px solid rgb(51, 50, 50);
-  padding: 0.6vmax 0.7vmax;
-  transition: all 0.5s;
-  background-color: white;
-  cursor: pointer;
-}
-
-.page-item:first-child {
-  border-radius: 10px 0 0 10px;
-}
-.page-item:last-child {
-  border-radius: 0 10px 10px 0;
-}
-
-.page-link {
-  color: tomato;
-  color: black;
-  font: 300 1vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  transition: all 0.5s;
-}
-
-.page-item:hover {
-  background-color: rgb(151, 144, 144);
-}
-
-.page-link:hover {
-  background-color: rgb(151, 144, 144);
-  color: white;
-}
-
-.pageItemActive {
-  background-color: tomato;
-  color: white;
+  width: 70%;
 }
 
 /* Media query */
@@ -110,11 +69,10 @@
     align-items: center;
     border-right: none;
     padding-bottom: 2rem;
-    
+    margin-top: 8rem;
   }
-    
 
-  .container{
+  .container {
     margin-top: 2rem;
   }
 
@@ -122,10 +80,24 @@
     width: 70%;
   }
 
-  .productContainer{
+  .productContainer {
     border-top: 1px solid rgb(223, 219, 219);
     padding-top: 2rem;
+    margin-top: 2rem;
   }
 
   
+}
+
+@media only screen and (max-width: 400px) {
+ 
+
+  .productContainer {
+    margin-top: 4rem;
+    padding-top: 0.4rem;
+  }
+
+  .filterContainer {
+    margin-top: 10rem;
+  }
 }

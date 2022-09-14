@@ -11,9 +11,10 @@
 }
 
 .banner > h1 {
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
   color: black;
+  font-size: 1.8rem;
 }
 .banner > p {
   margin-bottom: 4rem;
@@ -30,6 +31,10 @@
 }
 
 /* Product Style */
+.container{
+  width: 70vw;
+}
+
 .productCard {
   display: flex;
   flex-direction: column;
@@ -76,6 +81,8 @@
     font-weight: 300;
     font-size: 2vmax;
 }
+
+
   
 @media only screen and (max-width: 600px) {
 

@@ -27,6 +27,7 @@ import {
 } from "../../redux/features/authSlice";
 import Loader from "../Loader/Loader";
 
+
 const UpdateUser = () => {
   const data = {
     name: "",
@@ -92,6 +93,7 @@ const UpdateUser = () => {
                 alignContent: "center",
                 marginTop: "120px",
                 height: "125vh",
+                
               }}
             >
               <MDBCard alignment="center">

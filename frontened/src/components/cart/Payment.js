@@ -15,7 +15,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { CreditCard, Event, VpnKey } from "@mui/icons-material";
 import { API } from "../../redux/api";
-import { clearErrors, createOrder } from "../../redux/features/orderSlice";
+import { clearErrors, createOrder, clearCart } from "../../redux/features/orderSlice";
 
 const Payment = () => {
   const dispatch = useDispatch();
@@ -34,16 +34,6 @@ const Payment = () => {
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice) * 100,
   };
-
-  // const {id, name ,price, image, quantity} = cartItems;
-  // const items = {
-  //   product: id,
-  //   name,
-  //   price,
-  //   image,
-  //   quantity,
-  // }
-    
 
 
   const order = {
@@ -92,7 +82,9 @@ const Payment = () => {
             status: result.paymentIntent.status,
           };
           dispatch(createOrder({order,navigate, alert}));
-          navigate("/success")
+          navigate("/success");
+          localStorage.removeItem("cartItems");
+          dispatch(clearCart());
         }
         else{
           alert.error("There's some issue while processing payment");

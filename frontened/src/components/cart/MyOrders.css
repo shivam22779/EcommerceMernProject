@@ -2,15 +2,12 @@
   width: 100vw;
   max-width: 100%;
   box-sizing: border-box;
-  background-color: aliceblue;
   position: fixed;
-  height: 80vh;
+  height: max-content;
   display: flex;
   flex-direction: column;
   z-index: 1;
 }
-
-
 
 .myOrdersHeading {
   text-align: center;
@@ -25,7 +22,6 @@
   background-color: white;
 }
 
-.MuiDataGrid-columnsContainer{
-    background: rgb(242, 84, 56);
-
+.css-yrdy0g-MuiDataGrid-columnHeaderRow {
+  background: #5252d5;
 }

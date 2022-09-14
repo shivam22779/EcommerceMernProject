@@ -1,14 +1,13 @@
 import React, { Fragment, useEffect } from "react";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import "./ProductList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,
   getAllOrdersByAdmin,
-  deleteOrdersByAdmin
-  
+  deleteOrdersByAdmin,
 } from "../../redux/features/orderSlice";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MetaData from "../MetaData";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
@@ -16,12 +15,13 @@ import { Button } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 import Sidebar from "./Sidebar";
 
-
 const OrderList = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
-  const {allOrders, error} = useSelector((state) => ({ ...state.ordersInfo }));
+  const { allOrders, error } = useSelector((state) => ({
+    ...state.ordersInfo,
+  }));
   const columns = [
     { field: "id", headerName: "Order Id", minWidth: 200, flex: 0.6 },
     {
@@ -30,7 +30,7 @@ const OrderList = () => {
       minWidth: 100,
       flex: 0.3,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
+        return params.row.status === "Delivered"
           ? "greenColor"
           : "redColor";
       },
@@ -59,13 +59,21 @@ const OrderList = () => {
       renderCell: (params) => {
         return (
           <Fragment>
-            <Link to={`/admin/order/${params.getValue(params.id, "id")}`}>
+            <Link to={`/admin/order/${params.row.id}`}>
               <Edit />
             </Link>
             <Button>
-              <Delete onClick={()=>{
-                dispatch(deleteOrdersByAdmin({id: params.getValue(params.id, "id"), alert, navigate}));
-              }}/>
+              <Delete
+                onClick={() => {
+                  dispatch(
+                    deleteOrdersByAdmin({
+                      id: params.row.id,
+                      alert,
+                      navigate,
+                    })
+                  );
+                }}
+              />
             </Button>
           </Fragment>
         );
@@ -75,50 +83,49 @@ const OrderList = () => {
 
   const rows = [];
 
-  allOrders && allOrders.forEach((item)=>{
-    rows.push({
+  allOrders &&
+    allOrders.forEach((item) => {
+      rows.push({
         id: item._id,
         itemsQty: item.orderItems.length,
         amount: item.totalPrice,
         status: item.orderStatus,
+      });
     });
-  });
 
-  useEffect(()=>{
-    if(error){
-        alert.error(error);
-        dispatch(clearErrors());
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
     }
-
   }, [error, alert, dispatch]);
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getAllOrdersByAdmin());
-
   }, [dispatch]);
 
-  return <Fragment>
-    <MetaData title="ALL ORDERS - Admin"/>
+  return (
+    <Fragment>
+      <MetaData title="ALL ORDERS - Admin" />
 
-    <div className="dashboard">
-        <Sidebar/>
+      <div className="dashboard">
+        <Sidebar />
         <div className="productListContainer">
-            <h1 className="productListHeading">ALL ORDERS</h1>
-            <DataGrid
+          <h1 className="productListHeading">ALL ORDERS</h1>
+          <DataGrid
             rows={rows}
-           
             columns={columns}
+            rowsPerPageOptions={[5]}
             pageSize={5}
             disableSelectionOnClick
             className="ProductListTable"
             autoHeight
             pagination
-            />
+          />
         </div>
-
-    </div>
-  </Fragment>;
+      </div>
+    </Fragment>
+  );
 };
 
 export default OrderList;
-

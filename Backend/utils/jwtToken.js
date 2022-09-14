@@ -8,7 +8,8 @@ const token = (user,res, statusCode)=>{
         expires : new Date(
             Date.now() + process.env.COOKIE_EXPIRE*24*60*60*1000
         ),
-        httpOnly: true, //Now client side scripting language has no control over your cookies
+        // httpOnly: true, //Now client side scripting language has no control over your cookies
+        
         
         // Path: "/", if / the cookies will be sent for all paths
         // Secure: true, cookie has to be sent over HTTPS

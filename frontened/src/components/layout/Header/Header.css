@@ -29,6 +29,12 @@
   text-align: right;
 }
 
+.badgeClass{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
 .icons svg {
   color: white;
   font-size: 3rem;
@@ -76,13 +82,17 @@
     padding: 0.5rem 0.2rem;
     height: auto;
   }
-
-  /* .links {
-    display: none;
-  } */
   .search {
     grid-row: 2;
     grid-column: 1 / span 2;
     margin-top: 0.4rem;
   }
+
+  .badgeClass{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+
+  
 }

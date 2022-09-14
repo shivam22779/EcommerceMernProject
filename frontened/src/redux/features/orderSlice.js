@@ -132,6 +132,11 @@ const orderSlice = createSlice({
     successReset: (state, action) => {
       state.success = false;
     },
+
+    clearCart: (state, action)=>{
+      state.cartItems = [];
+    },
+
   },
 
   extraReducers: {
@@ -204,5 +209,5 @@ const orderSlice = createSlice({
 });
 
 export default orderSlice.reducer;
-export const { addToCart, removeFromCart, saveShippingInfo, clearErrors, successReset } =
+export const { addToCart, removeFromCart, saveShippingInfo, clearErrors, successReset, clearCart } =
   orderSlice.actions;

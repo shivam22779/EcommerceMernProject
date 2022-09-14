@@ -40,15 +40,15 @@ const Home = () => {
           <MetaData title="ECOMMERCE"></MetaData>
           <div className="banner">
             <p>Welcome to Ecommerce</p>
-            <h1>FIND YOUR AMAZING PRODUCTS HERE</h1>
+            {/* <h1>FIND YOUR AMAZING PRODUCTS HERE</h1> */}
           </div>
 
           <h2 className="homeHeading">Featured Products</h2>
-          <div className="container"  id="container">
+          <div className="container">
             <MDBRow>
               {products &&
                 products.map((product) => (
-                  <MDBCol key={product._id}  className="col-md-4 col-sm-6">
+                  <MDBCol key={product._id}  className="col-sm-4">
                     <Product product={product} />
                   </MDBCol>
                 ))}

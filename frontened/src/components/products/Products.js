@@ -9,9 +9,11 @@ import Product from "../Home/Product.js";
 import MetaData from "../MetaData";
 import { useLocation } from "react-router-dom";
 import { Typography, Slider } from "@mui/material";
-import Pagination from "react-js-pagination";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 const categories = [
+  "All",
   "Laptop",
   "Footwear",
   "Bottom",
@@ -28,8 +30,10 @@ const Products = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { products, loading, error, productsCount, resultPerPage } =
-    useSelector((state) => ({ ...state.product }));
+
+  const { products, loading, error, noOfPages } = useSelector((state) => ({
+    ...state.product,
+  }));
 
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
@@ -47,15 +51,28 @@ const Products = () => {
   };
 
   useEffect(() => {
-    dispatch(
-      getProducts({
-        keyword: searchQuery,
-        currentPage,
-        price,
-        category,
-        rating,
-      })
-    );
+    if (category === "All") {
+      dispatch(
+        getProducts({
+          keyword: searchQuery,
+          currentPage,
+          price,
+          category: "",
+          rating,
+        })
+      );
+    } else {
+      dispatch(
+        getProducts({
+          keyword: searchQuery,
+          currentPage,
+          price,
+          category,
+          rating,
+        })
+      );
+    }
+
     // eslint-disable-next-line
   }, [currentPage, searchQuery, price, category, rating, dispatch]);
 
@@ -72,9 +89,10 @@ const Products = () => {
         <Fragment>
           <MetaData title="Products"></MetaData>
 
-          <div className="container ">
-            <div className="row justify-content-md-center">
+          
+            <div className="row w-100 mb-5">
               <div className="filterContainer col-md-3">
+                
                 <div className="filterBox">
                   <Typography>Price</Typography>
 
@@ -86,7 +104,7 @@ const Products = () => {
                     aria-labelledby="range-slider"
                     className="sliderClass"
                     min={0}
-                    max={2500}
+                    max={25000}
                   />
                 </div>
 
@@ -114,7 +132,7 @@ const Products = () => {
                 </div>
 
                 <div className="ratings">
-                  <Typography>Ratings Above</Typography>
+                  <Typography>Ratings ↑</Typography>
                   <Slider
                     value={rating}
                     size="large"
@@ -127,6 +145,7 @@ const Products = () => {
                     valueLabelDisplay="auto"
                   />
                 </div>
+                
               </div>
 
               <div className="productContainer col-md-9" id="container">
@@ -145,35 +164,29 @@ const Products = () => {
                 <MDBRow className="justify-content-center">
                   {products &&
                     products.map((product) => (
-                      <MDBCol
-                        key={product._id}
-                        className="col-md-3 col-sm-3 my-2"
-                      >
+                      <MDBCol key={product._id} className="col-sm-4 my-2">
                         <Product product={product} />
                       </MDBCol>
                     ))}
                 </MDBRow>
-                <div className="paginationBox">
-                  {resultPerPage < productsCount && (
-                    <Pagination
-                      activePage={currentPage}
-                      itemsCountPerPage={resultPerPage}
-                      totalItemsCount={productsCount}
-                      onChange={setCurrentPage}
-                      nextPageText="Next"
-                      previousPageText="Previous"
-                      firstPageText="1st"
-                      lastPageText="last"
-                      itemClass="page-item"
-                      linkClass="page-link"
-                      activeClass="pageItemActive"
-                      activeLinkClass="pageLinkActive"
-                    />
-                  )}
-                </div>
+                <Stack spacing={2} style={{ width: "100%", margin: "auto" }}>
+                  <Pagination
+                    style={{ margin: "auto" }}
+                    count={noOfPages > 1 ? noOfPages : 0}
+                    showFirstButton={noOfPages > 1 ? true : false}
+                    showLastButton={noOfPages > 1 ? true : false}
+                    hidePrevButton={noOfPages > 1 ? false : true}
+                    hideNextButton={noOfPages > 1 ? false : true}
+                    variant="outlined"
+                    color="primary"
+                    page={currentPage}
+                    onChange={(event, value) => setCurrentPage(value)}
+                  />
+                </Stack>
               </div>
             </div>
-          </div>
+            
+          
         </Fragment>
       )}
     </Fragment>

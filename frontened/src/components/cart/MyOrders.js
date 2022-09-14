@@ -1,20 +1,20 @@
-import React, { Fragment, useEffect} from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import { myOrders, clearErrors } from "../../redux/features/orderSlice";
 import MetaData from "../MetaData";
-
 import { Typography } from "@mui/material";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import Loader from "../Loader/Loader";
 import { Launch } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import "./MyOrders.css";
 
+
 const MyOrders = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  
+
   const { loading, error, orders } = useSelector((state) => ({
     ...state.ordersInfo,
   }));
@@ -28,9 +28,7 @@ const MyOrders = () => {
       minWidth: 150,
       flex: 0.5,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
+        return params.row.status === "Delivered" ? "greenColor" : "redColor";
       },
     },
     {
@@ -56,7 +54,7 @@ const MyOrders = () => {
       sortable: false,
       renderCell: (params) => {
         return (
-          <Link to={`/order/${params.getValue(params.id, "id")}`}>
+          <Link to={`/order/${params.row.id}`}>
             <Launch />
           </Link>
         );
@@ -89,10 +87,11 @@ const MyOrders = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="myOrdersPage" >
+        <div className="myOrdersPage">
           <DataGrid
             rows={rows}
             columns={columns}
+            rowsPerPageOptions={[10]}
             pageSize={10}
             disableSelectOnClick
             className="myOrdersTable"
