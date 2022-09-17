@@ -7,6 +7,14 @@
   align-items: center;
 }
 
+.hamBurger {
+  display: none !important;
+}
+
+.logo > svg {
+  color: white;
+  margin-right: 20px;
+}
 .logo img {
   width: 3rem;
   aspect-ratio: 1/1;
@@ -29,7 +37,7 @@
   text-align: right;
 }
 
-.badgeClass{
+.badgeClass {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -46,31 +54,27 @@
   color: rgba(19, 18, 18, 0.279);
 }
 
-.linkSection {
-  background-color: #374656;
-}
-
 .links {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
-}
-  
-
-.links > :first-child{
-  margin-right: 6vmax;
+  background-color: #374656;
 }
 
 .links a {
   color: white;
-  padding: 0rem 0.4rem;
+  padding: 0.6vw 1vw;
+  margin: 0 1.5vw;
   transition: all 0.5s;
 }
 
 .links a:hover {
-  border: 1px solid white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px;
+  font: 500 1rem small-caption;
+  background-color: white;
   color: black;
 }
 
@@ -88,11 +92,38 @@
     margin-top: 0.4rem;
   }
 
-  .badgeClass{
+  .badgeClass {
     position: absolute;
     top: 4px;
     right: 4px;
   }
+}
 
-  
+@media only screen and (max-width: 400px) {
+  .hamBurger {
+    display: block !important;
+  }
+
+  .logo img {
+    display: none;
+  }
+
+  .resp-link-sec {
+    height: 160px !important;
+  }
+
+  .links {
+    position: absolute;
+    z-index: 3;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+
+  .links > a {
+    margin: 5px 7px;
+  }
 }

@@ -17,6 +17,7 @@
     "axios": "^0.27.2",
     "chart.js": "^3.9.1",
     "country-state-city": "^3.0.1",
+    "emailjs-com": "^3.2.0",
     "mdb-react-ui-kit": "^4.1.0",
     "react": "^18.2.0",
     "react-alert": "^7.0.3",

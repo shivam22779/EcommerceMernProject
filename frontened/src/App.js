@@ -40,6 +40,8 @@ import { API } from "./redux/api";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
+import Contact from "./components/contact/Contact";
+import About from "./components/about/About";
 
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -66,9 +68,7 @@ function App() {
   useEffect(() => {
     getCookie();
     cookieName === "token" && dispatch(loadUser());
-    dispatch(loadUser());
-    getStripeApiKey();
-
+    cookieName === "token" && getStripeApiKey();
     // eslint-disable-next-line
   }, []);
 
@@ -80,6 +80,8 @@ function App() {
       {isAuthenticated && <UserOptions user={user} />}
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/about" element={<About />} />
         <Route exact path="/product/:id" element={<ProductDetails />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/products/search" element={<Products />} />

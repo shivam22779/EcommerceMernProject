@@ -1,0 +1,140 @@
+.about-section {
+  width: 100%;
+  min-height: 70vh;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+
+.about-section .title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about-container {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.content-section {
+  float: right;
+  width: 55%;
+}
+
+.image-section {
+  float: left;
+  width: 40%;
+}
+
+.image-section img {
+  width: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  float: left;
+}
+
+.content-section .title {
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.content-section .content p {
+  margin-top: 10px;
+  font-size: 17px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+.content-section .content .contact-btn > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.content-section .content .contact-btn > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content-section .content .contact-btn div:first-child > a {
+  background-color: #250458;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.5s;
+  margin: 10px 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.content-section .content .contact-btn div:first-child > a:hover {
+  background-color: #d21e1e;
+}
+
+.content-section .social a {
+  transition: all 0.5s;
+}
+
+.content-section .social a:hover {
+  color: rgb(202, 55, 55);
+}
+
+/* Media query */
+@media only screen and (max-width: 768px) {
+  .content-section {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .content-section .content p {
+    text-align: center;
+  }
+
+  .image-section {
+    float: none;
+    width: 100%;
+  }
+
+  .image-section img {
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: block;
+    margin: auto;
+  }
+
+  .content-section .title {
+    text-align: center;
+    font-size: 19px;
+  }
+
+  .content-section .content .contact-btn {
+    margin-top: 30px;
+  }
+
+  .content-section .content .contact-btn > div:first-child {
+    justify-content: center;
+  }
+
+  .content-section .content .contact-btn > div:last-child {
+    justify-content: center;
+  }
+
+  .image-section img {
+    float: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content-section .content .contact-btn > div:first-child {
+    flex-direction: column;
+  }
+
+  .content-section .content .contact-btn div:first-child > a {
+    margin: 5px 5px;
+  }
+}
