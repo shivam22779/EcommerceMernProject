@@ -36,7 +36,7 @@ import ProcessOrder from "./components/admin/ProcessOrder.js";
 import UsersList from "./components/admin/UsersList.js";
 import UpdateUser from "./components/admin/UpdateUser.js";
 import ProductReviews from "./components/admin/ProductReviews.js";
-import { API } from "./redux/api";
+// import { API } from "./redux/api";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
@@ -44,31 +44,34 @@ import Contact from "./components/contact/Contact";
 import About from "./components/about/About";
 
 function App() {
-  const [stripeApiKey, setStripeApiKey] = useState("");
+  // const [stripeApiKey, setStripeApiKey] = useState("");
+  const [stripePromise] = useState(() => loadStripe("pk_test_51LUAHJSI4CKGytFWAD6RHTzYd1PckafPnChHxwGyLcYB214H3sFeWbsCewZ6Niu8BI4gwsgkL9JXsKSXfQZsEj5v00vvndQaRf"))
   const dispatch = useDispatch();
 
   const { isAuthenticated, user } = useSelector((state) => ({ ...state.auth }));
 
-  const getStripeApiKey = async () => {
-    const { data } = await API.get("/api/v1/stripeapikey");
+  // const getStripeApiKey = async () => {
+  //   const { data } = await API.get("/api/v1/stripeapikey");
 
-    setStripeApiKey(data.stripeApiKey);
-  };
+  //   setStripeApiKey(data.stripeApiKey);
+  // };
 
-  var cookieName;
+  
   const getCookie = () => {
+    let cookieName;
     let allCookies = document.cookie;
     let allCookieArray = allCookies.split(";");
 
     for (let i = 0; i < allCookieArray.length; i++) {
-      cookieName = allCookieArray[i].split("=")[0];
+    cookieName = allCookieArray[i].split("=")[0];
     }
+    return cookieName;
   };
 
   useEffect(() => {
-    getCookie();
+    let cookieName = getCookie();
     cookieName === "token" && dispatch(loadUser());
-    cookieName === "token" && getStripeApiKey();
+    // getStripeApiKey();
     // eslint-disable-next-line
   }, []);
 
@@ -143,13 +146,26 @@ function App() {
             path="/process/payment"
             element={
               <ProtectedRoute>
-                <Elements stripe={loadStripe(stripeApiKey)}>
+                <Elements stripe={stripePromise}>
                   <Payment />
                 </Elements>
               </ProtectedRoute>
             }
           />
         }
+        {/* {
+          <Route
+            exact
+            path="/process/payment"
+            element={ stripeApiKey &&
+              <ProtectedRoute>
+                <Elements stripe={loadStripe(stripeApiKey)}>
+                  <Payment />
+                </Elements>
+              </ProtectedRoute>
+            }
+          />
+        } */}
 
         <Route
           path="/success"
