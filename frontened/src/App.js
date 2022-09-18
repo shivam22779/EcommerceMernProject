@@ -136,8 +136,10 @@ function App() {
           }
         />
 
-        {stripeApiKey && (
+        
+        {
           <Route
+            exact
             path="/process/payment"
             element={
               <ProtectedRoute>
@@ -147,7 +149,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-        )}
+        }
 
         <Route
           path="/success"
@@ -245,7 +247,7 @@ function App() {
             </AdminRoute>
           }
         />
-        <Route path="/*" element={window.location.pathname === "/process/payment" ? null : <PageNotFound />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>

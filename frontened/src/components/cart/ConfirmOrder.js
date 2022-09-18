@@ -19,6 +19,9 @@ const ConfirmOrder = () => {
     (acc, item)=> acc + item.quantity * item.price, 0
   );
 
+  // array.reduce(function(total, currentValue, currentIndex), initialValue)
+  // total is the initial value or the previously returned value of the function
+
   const shippingCharges = subTotal > 1000 ? 0 : 200;
   const tax = subTotal * 0.18;
 
