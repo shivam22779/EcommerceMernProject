@@ -78,6 +78,15 @@ function App() {
     <Router>
       <Header />
       {isAuthenticated && <UserOptions user={user} />}
+      {window.location.pathname === "/process/payment" && (
+        <ProtectedRoute>
+          {stripeApiKey && (
+            <Elements stripe={loadStripe(stripeApiKey)}>
+              <Payment />
+            </Elements>
+          )}
+        </ProtectedRoute>
+      )}
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/contact" element={<Contact />} />
@@ -135,7 +144,7 @@ function App() {
           }
         />
 
-        {stripeApiKey && (
+        {/* {stripeApiKey && (
           <Route
             path="/process/payment"
             element={
@@ -146,7 +155,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-        )}
+        )} */}
 
         <Route
           path="/success"
@@ -244,7 +253,14 @@ function App() {
             </AdminRoute>
           }
         />
-        <Route path="/*" element={<PageNotFound />} />
+        <Route
+          path="/*"
+          element={
+            window.location.pathname === "/process/payment" ? null : (
+              <PageNotFound />
+            )
+          }
+        />
       </Routes>
       <Footer />
     </Router>
