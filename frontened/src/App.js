@@ -45,7 +45,7 @@ import About from "./components/about/About";
 
 function App() {
   // const [stripeApiKey, setStripeApiKey] = useState("");
-  const [stripePromise] = useState(() => loadStripe("pk_test_51LUAHJSI4CKGytFWAD6RHTzYd1PckafPnChHxwGyLcYB214H3sFeWbsCewZ6Niu8BI4gwsgkL9JXsKSXfQZsEj5v00vvndQaRf"))
+  const [stripePromise] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_API_KEY));
   const dispatch = useDispatch();
 
   const { isAuthenticated, user } = useSelector((state) => ({ ...state.auth }));
@@ -57,20 +57,20 @@ function App() {
   // };
 
   
-  const getCookie = () => {
-    let cookieName;
-    let allCookies = document.cookie;
-    let allCookieArray = allCookies.split(";");
+  // const getCookie = () => {
+  //   let cookieName;
+  //   let allCookies = document.cookie;
+  //   let allCookieArray = allCookies.split(";");
 
-    for (let i = 0; i < allCookieArray.length; i++) {
-    cookieName = allCookieArray[i].split("=")[0];
-    }
-    return cookieName;
-  };
+  //   for (let i = 0; i < allCookieArray.length; i++) {
+  //   cookieName = allCookieArray[i].split("=")[0];
+  //   }
+  //   return cookieName;
+  // };
 
   useEffect(() => {
-    let cookieName = getCookie();
-    cookieName === "token" && dispatch(loadUser());
+    // let cookieName = getCookie();
+    dispatch(loadUser());
     // getStripeApiKey();
     // eslint-disable-next-line
   }, []);
