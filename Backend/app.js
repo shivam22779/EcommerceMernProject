@@ -45,6 +45,7 @@ app.use(express.static(path.join(__dirname, "../frontened/build")));
 
 app.get("*", (req, res)=>{
     res.sendFile(path.resolve(__dirname, "../frontened/build/index.html"));
+    
 });
 
 // Error handler middleware
