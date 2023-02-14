@@ -2,12 +2,11 @@
   "name": "amazona",
   "version": "1.0.0",
   "description": "This is an e-commerce website ",
-  "main": "backend/server.js",
+  "main": "Backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node Backend/server.js",
-    "dev": "nodemon Backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --force --prefix frontened && npm run build --prefix frontened"
+    "dev": "nodemon Backend/server.js"
   },
   "author": "",
   "license": "ISC",

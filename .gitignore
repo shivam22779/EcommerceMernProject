@@ -8,7 +8,7 @@
 /frontened/coverage
 
 # production
-/frontened/build
+
 
 # misc
 /Backend/config/config.env
