@@ -22,15 +22,15 @@ const About = () => {
               Hello, Welcome to my E-commerce website. So glad you are here.
               <br />
               <br />
-              I am looking for an opportunity in MERN stack development field. Currently I have total 1.8 years of experience in mainframe and would love to switch my carrer in web development field. Dear recruiters if you have any vacancy in your company which suits my profile kindly contact me. My recent project is this website itself and many other projects are in my github profile.
+              React.js developer having experience in architecting scalable and performant web applications. I bring expertise in React, Redux, TypeScript, and modern front-end ecosystems to create intuitive interfaces and robust client-side solutions.
               <br />
-              <br />
-              This website is created using redux toolkit for state management with React for frontend and express for backend with mongodb as it's database.
+              Throughout my career, I've led diverse teams, implemented complex business logic, and optimized workflows to elevate user satisfaction. My passion lies in blending creativity and technology to build applications that make a difference. I'm open to collaborating with forward-thinking teams focused on innovation and growth.
+             
               <br />
               <br />
               <b>Skills:</b>
               <br />
-              #React #Mongodb #ExpressJS #Nodejs #Bootstrap #HTML #CSS #SQL #git #API integration #Basic python
+              #ReactJS #NextJS #TypeScript #JavaScript #Mongodb #ExpressJS #Nodejs #HTML #CSS #SCSS #git
 
 
             </p>
