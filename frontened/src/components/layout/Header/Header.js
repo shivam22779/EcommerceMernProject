@@ -84,9 +84,7 @@ const Header = () => {
         <Link to="/contact" onClick={toggleHamburger}>
           Contact Me
         </Link>
-        <Link to="/about" onClick={toggleHamburger}>
-          About Me
-        </Link>
+       
       </div>
     </Fragment>
   );
